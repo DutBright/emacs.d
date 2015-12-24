@@ -83,7 +83,7 @@
 (require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
-(require 'init-csv)
+;;(require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
 (require 'init-php)
@@ -114,6 +114,9 @@
 
 (require 'init-dash)
 (require 'init-ledger)
+
+
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
@@ -151,6 +154,15 @@
 ;; Locales (setting them earlier in this file doesn't work in X)
 ;;----------------------------------------------------------------------------
 (require 'init-locales)
+
+(require 'init-yasnippet)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+(unless (package-installed-p 'scala-mode2)
+  (package-refresh-contents) (package-install 'scala-mode2))
 
 (add-hook 'after-init-hook
           (lambda ()

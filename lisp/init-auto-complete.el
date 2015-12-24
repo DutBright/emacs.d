@@ -60,5 +60,6 @@
 
 (setq dabbrev-friend-buffer-function 'sanityinc/dabbrev-friend-buffer)
 
+(require 'init-ac-source)
 
 (provide 'init-auto-complete)
